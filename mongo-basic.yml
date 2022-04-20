@@ -1,4 +1,4 @@
-version: "3.2"     
+version: "3.9"     
 services:          
   mongodb:         
     image: mongo    
@@ -6,10 +6,8 @@ services:
     environment:   
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: 1234
-    # volumes:        
-    #   - type: bind 
-    #     source: ./data/db 
-    #     target: /data/db 
+    volumes:        
+      - ~/apps/mongo:/data/db
     container_name: "mongodb" 
     ports:               
       - "27017:27017"     
